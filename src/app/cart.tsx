@@ -10,7 +10,7 @@ const CartScreen = () => {
 
 
 
-  const { items, total } = useCart();
+  const { items, total, checkout } = useCart();
 
   return (
     <View style={{padding: 10}}>
@@ -21,7 +21,8 @@ const CartScreen = () => {
       />
 
       <Text style={{marginTop: 20, fontSize: 20, fontWeight: '500'}}>Total: ${total}</Text>
-      <Button text="Check out" />
+      <Button onPress={checkout} text="Checkout" />
+      
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   )
