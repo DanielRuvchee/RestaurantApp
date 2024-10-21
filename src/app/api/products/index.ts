@@ -70,9 +70,9 @@ export const useUpdateProduct = () => {
       }
       return updatedProduct;
     },
-    async onSuccess(_, data) {
+    async onSuccess(_, {id} ) {
      await queryClient.invalidateQueries(['products']);
-     await queryClient.invalidateQueries(['products', data.id]);
+     await queryClient.invalidateQueries(['products', id]);
     }
   })
 }

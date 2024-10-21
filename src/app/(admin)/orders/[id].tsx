@@ -5,15 +5,19 @@ import { Stack, useLocalSearchParams } from 'expo-router'
 import { FlatList, Text, View, Pressable, ActivityIndicator } from 'react-native';
 import { OrderStatusList } from '@/src/types';
 import Colors from '@/src/constants/Colors';
-import { useOrderDetails } from '../../api/orders';
+import { useOrderDetails, useUpdateOrder } from '../../api/orders';
 
 export default function OrderDetailsScreen() {
   const { id: idString } = useLocalSearchParams();
   const id = parseFloat(typeof idString == 'string' ? idString : idString[0]);
 
   const { data: order, isLoading, error } = useOrderDetails(id);
+  const { mutate: updateOrder } = useUpdateOrder();
 
- 
+  const updateStatus = (status: string) => {
+    updateOrder({id: id, updatedFields: { status }})
+  }
+
   if(isLoading) {
       return <ActivityIndicator/>;
   }
@@ -39,7 +43,7 @@ export default function OrderDetailsScreen() {
                       {OrderStatusList.map((status) => (
                         <Pressable
                           key={status}
-                          onPress={() => console.warn('Update status')}
+                          onPress={() => updateStatus(status)}
                           style={{
                             borderColor: Colors.light.tint,
                             borderWidth: 1,
