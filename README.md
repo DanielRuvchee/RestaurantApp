@@ -4,7 +4,7 @@ Fully completed application for a pizza restaurant with react native with supaba
 
 1]The home page of the app is containing two screens one for the products available and one for the orders that the user made.
 
-![Simulator Screenshot - iPhone 16 - 2024-10-22 at 20 31 52](https://github.com/user-attachments/assets/4d3615b0-906c-47e5-a73b-248a46c6b2cc)
+<img src="![Simulator Screenshot - iPhone 16 - 2024-10-22 at 20 31 52](https://github.com/user-attachments/assets/4d3615b0-906c-47e5-a73b-248a46c6b2cc)" width: "350px" height: "500px"/>
 
 2]Product's detail page
 ![Simulator Screenshot - iPhone 16 - 2024-10-22 at 20 47 08](https://github.com/user-attachments/assets/bcceae27-3a0b-4910-b240-841c54901b1f)
